@@ -5,6 +5,7 @@ import HowToGetStarted from "@/components/Home/HowToGetStarted";
 import HowWeCompare from "@/components/Home/HowWeCompare";
 import ProductSection from "@/components/Home/ProductSection";
 import WhyUsSection from "@/components/Home/WhyUsSection";
+import YouMayLike from "@/components/Home/YouMayLike";
 import Layout from "@/components/Layout";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
 			<HowWeCompare />
 			<WhyUsSection />
 			<HowToGetStarted />
+			<YouMayLike />
 		</Layout>
 	);
 };

@@ -4,6 +4,7 @@ import translateIcon from "@/assets/icon/translate.svg";
 import currency from "@/assets/icon/currency.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import CustomButton from "./CustomButton";
 
 // type HeaderProps = {
 // 	children?: React.ReactNode;
@@ -54,12 +55,10 @@ const Header = () => {
 							className="max-w-[20px] max-h-[18px]"
 						/>
 					</button>
-					<button
-						onClick={() => console.log("sign in|sign up")}
-						className="bg-[#B02235] text-white px-[16px] py-[8px] rounded-[8px]"
-					>
+
+					<CustomButton onClick={() => console.log("sign in|sign up")}>
 						Sign in | Sign up
-					</button>
+					</CustomButton>
 				</div>
 			</div>
 		</div>

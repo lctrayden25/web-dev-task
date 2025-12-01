@@ -1,6 +1,7 @@
 import React from "react";
 import getPackageBg from "@/assets/images/get-package-bg.png";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../CustomButton";
 
 const GetPackage = () => {
 	const navigate = useNavigate();
@@ -20,13 +21,7 @@ const GetPackage = () => {
 			<div className="text-4xl font-bold text-[32px]">
 				Get the best value for the USA
 			</div>
-
-			<button
-				className="bg-[#B02235] text-white px-[16px] py-[8px] rounded-[8px] cursor-pointer"
-				onClick={() => navigate("/packages")}
-			>
-				Get Package
-			</button>
+			<CustomButton>Get Package</CustomButton>
 		</div>
 	);
 };
