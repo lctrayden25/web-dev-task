@@ -13,7 +13,6 @@ import Packages from "./pages/Packages";
 import ResourceDetail from "./pages/ResourceDetail";
 import { useTranslation } from "react-i18next";
 import { Language } from "./utils/constant";
-import { useEffect } from "react";
 
 const LocalizedRoutes = () => {
 	const { locale } = useParams<{ locale: Language }>();
