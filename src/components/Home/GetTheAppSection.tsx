@@ -1,4 +1,3 @@
-import React from "react";
 import CustomImage from "../CustomImage";
 import appleStore from "@/assets/icon/apple.png";
 import googlePlay from "@/assets/icon/google.png";

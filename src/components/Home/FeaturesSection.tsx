@@ -2,7 +2,7 @@ import { apiUrl, type FeaturesSectionType } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
 
 const FeaturesSection = () => {
-	const { data, isLoading, error } = useQuery<FeaturesSectionType>({
+	const { data } = useQuery<FeaturesSectionType>({
 		queryKey: ["FeaturesSection"],
 		queryFn: () =>
 			fetch(`${apiUrl}/content/FeaturesSection/US/en-US`).then((res) =>

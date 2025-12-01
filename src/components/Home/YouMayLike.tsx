@@ -1,4 +1,3 @@
-import React from "react";
 import youMayLikeBg from "@/assets/images/you-may-like-bg.png";
 import CustomImage from "../CustomImage";
 import CustomButton from "../CustomButton";

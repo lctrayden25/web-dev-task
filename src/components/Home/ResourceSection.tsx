@@ -1,5 +1,4 @@
 import { dummyResourceData } from "@/utils/mock/resourceData";
-import React from "react";
 import CustomImage from "../CustomImage";
 import { Link } from "react-router-dom";
 

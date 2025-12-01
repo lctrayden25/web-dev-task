@@ -1,9 +1,8 @@
 import { apiUrl } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
 
 const HowWeCompare = () => {
-	const { data, isLoading, error } = useQuery<unknown>({
+	const { data } = useQuery<unknown>({
 		queryKey: ["HowWeCompare"],
 		queryFn: () =>
 			fetch(`${apiUrl}/content/HowWeCompare/US/en-US`).then((res) =>
@@ -11,7 +10,7 @@ const HowWeCompare = () => {
 			),
 	});
 
-	// console.log({ data });
+	console.log({ data });
 
 	return (
 		<div className="relative py-[70px] px-[80px] w-full flex flex-col items-center justify-between">

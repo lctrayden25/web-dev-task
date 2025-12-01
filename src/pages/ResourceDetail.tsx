@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import React from "react";
 import { useParams } from "react-router-dom";
 
 const ResourceDetail = () => {

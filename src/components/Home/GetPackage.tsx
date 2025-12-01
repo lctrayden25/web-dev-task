@@ -1,10 +1,7 @@
-import React from "react";
 import getPackageBg from "@/assets/images/get-package-bg.png";
-import { useNavigate } from "react-router-dom";
 import CustomButton from "../CustomButton";
 
 const GetPackage = () => {
-	const navigate = useNavigate();
 	return (
 		<div
 			className="relative py-[70px] px-[80px] w-full flex flex-col gap-[24px] items-center justify-center"

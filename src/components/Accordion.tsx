@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import add from "@/assets/icon/add.svg";
 
 type AccordionItem = {
