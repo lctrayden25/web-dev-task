@@ -1,4 +1,7 @@
-import { dummyWhyUsSectionData, type WhyUsSectionType } from "@/utils/mockData";
+import {
+	dummyWhyUsSectionData,
+	type WhyUsSectionType,
+} from "@/utils/mock/whyUsData";
 import whyUsSectionLogo from "@/assets/images/why-us-logo.png";
 import whyUsSectionBg from "@/assets/images/why-us-bg.png";
 import WhyUsCard from "../WhyUsCard";

@@ -1,4 +1,5 @@
 import BenefitFeature from "@/components/Home/BenefitFeature";
+import FaqSection from "@/components/Home/FaqSection";
 import FeaturesSection from "@/components/Home/FeaturesSection";
 import GetPackage from "@/components/Home/GetPackage";
 import HowToGetStarted from "@/components/Home/HowToGetStarted";
@@ -19,6 +20,7 @@ const Home = () => {
 			<WhyUsSection />
 			<HowToGetStarted />
 			<YouMayLike />
+			<FaqSection />
 		</Layout>
 	);
 };

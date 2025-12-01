@@ -1,0 +1,17 @@
+import Accordion from "../Accordion";
+import { dummyFaqData, type FaqItemType } from "@/utils/mock/FaqData";
+
+const FaqSection = () => {
+	const faqData = dummyFaqData;
+
+	return (
+		<div className="relative py-[70px] px-[80px] w-full flex flex-col items-center justify-between mt-10">
+			<div className="font-bold text-[32px]">Frequently Asked Questions</div>
+			<div className="relative max-w-[974px] w-full bg-[#fbf4e3] border border-[#FFFBF2] rounded-[8px] p-[24px] mt-10">
+				<Accordion items={faqData as FaqItemType[]} />
+			</div>
+		</div>
+	);
+};
+
+export default FaqSection;
