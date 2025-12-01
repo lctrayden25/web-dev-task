@@ -11,3 +11,13 @@ export type FeaturesSectionType = {
 		paragraph: string;
 	}[];
 };
+
+export type HowToGetStartedType = {
+	title: string;
+	steps: {
+		icon: string;
+		title: string;
+		paragraph: string;
+		image: string;
+	}[];
+};
