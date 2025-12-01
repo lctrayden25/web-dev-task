@@ -39,8 +39,7 @@ const LocalizedRoutes = () => {
 };
 
 function App() {
-	const { t, i18n } = useTranslation();
-	console.log(t("welcome"));
+	const { i18n } = useTranslation();
 
 	return (
 		<>
