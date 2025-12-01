@@ -3,6 +3,7 @@ import FeaturesSection from "@/components/Home/FeaturesSection";
 import GetPackage from "@/components/Home/GetPackage";
 import HowWeCompare from "@/components/Home/HowWeCompare";
 import ProductSection from "@/components/Home/ProductSection";
+import WhyUsSection from "@/components/Home/WhyUsSection";
 import Layout from "@/components/Layout";
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
 			<FeaturesSection />
 			<GetPackage />
 			<HowWeCompare />
+			<WhyUsSection />
 		</Layout>
 	);
 };
