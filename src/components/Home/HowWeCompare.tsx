@@ -2,15 +2,15 @@ import { apiUrl } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
 
 const HowWeCompare = () => {
-	const { data } = useQuery<unknown>({
-		queryKey: ["HowWeCompare"],
-		queryFn: () =>
-			fetch(`${apiUrl}/content/HowWeCompare/US/en-US`).then((res) =>
-				res.json()
-			),
-	});
+	// const { data } = useQuery<unknown>({
+	// 	queryKey: ["HowWeCompare"],
+	// 	queryFn: () =>
+	// 		fetch(`${apiUrl}/content/HowWeCompare/US/en-US`).then((res) =>
+	// 			res.json()
+	// 		),
+	// });
 
-	console.log({ data });
+	// console.log({ data });
 
 	return (
 		<div className="relative py-[70px] px-[80px] w-full flex flex-col items-center justify-between">

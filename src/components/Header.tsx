@@ -5,6 +5,7 @@ import currency from "@/assets/icon/currency.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 // type HeaderProps = {
 // 	children?: React.ReactNode;
@@ -39,13 +40,14 @@ const Header = () => {
 				<div className="relative flex items-center gap-[35px] text-[16px]">
 					<Link to="/explore">Explore</Link>
 					<Link to="/help">Help</Link>
-					<button className="cursor-pointer">
+					{/* <button className="cursor-pointer">
 						<img
 							src={translateIcon}
 							alt="translate"
 							className="max-w-[20px] max-h-[18px]"
 						/>
-					</button>
+					</button> */}
+					<LanguageSwitcher />
 				</div>
 				<div className="relative flex items-center gap-[35px] text-[16px]">
 					<button className="cursor-pointer">
