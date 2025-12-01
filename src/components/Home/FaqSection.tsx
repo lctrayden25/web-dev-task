@@ -1,5 +1,5 @@
 import Accordion from "../Accordion";
-import { dummyFaqData, type FaqItemType } from "@/utils/mock/FaqData";
+import { dummyFaqData, type FaqItemType } from "@/utils/mock/faqData";
 
 const FaqSection = () => {
 	const faqData = dummyFaqData;
