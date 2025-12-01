@@ -14,7 +14,7 @@ const YouMayLike = () => {
 				backgroundRepeat: "no-repeat",
 			}}
 		>
-			<div className="max-w-[1280px] w-full flex gap-[24px]">
+			<div className="max-w-[1280px] w-full flex gap-[107px]">
 				<CustomImage className="max-w-[606px] max-h-[389px] w-full h-full rounded-md" />
 				<div className="flex flex-col gap-[24px] justify-center">
 					<p className="font-light text-[18px]">YOU MAY ALSO LIKE</p>

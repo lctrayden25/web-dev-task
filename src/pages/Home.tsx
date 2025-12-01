@@ -2,6 +2,7 @@ import BenefitFeature from "@/components/Home/BenefitFeature";
 import FaqSection from "@/components/Home/FaqSection";
 import FeaturesSection from "@/components/Home/FeaturesSection";
 import GetPackage from "@/components/Home/GetPackage";
+import GetTheAppSection from "@/components/Home/GetTheAppSection";
 import HowToGetStarted from "@/components/Home/HowToGetStarted";
 import HowWeCompare from "@/components/Home/HowWeCompare";
 import ProductSection from "@/components/Home/ProductSection";
@@ -25,6 +26,7 @@ const Home = () => {
 			<FaqSection />
 			<TravelerSaySection />
 			<ResourceSection />
+			<GetTheAppSection />
 		</Layout>
 	);
 };
