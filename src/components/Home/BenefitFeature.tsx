@@ -8,6 +8,14 @@ import CustomImage from "../CustomImage";
 import Spinner from "../Spinner";
 import ErrorDisplay from "../ErrorDisplay";
 
+const accordionBackgroundColor = [
+	"#EFFBFF",
+	"#DEF6FF",
+	"#DAFFFD",
+	"#FFEAD9",
+	"#F4F3FF",
+];
+
 const BenefitFeature = () => {
 	const [activeAccordion, setActiveAccordion] = useState<number>(0);
 	const { locale } = useParams<{ locale: Language }>();
@@ -71,14 +79,15 @@ const BenefitFeature = () => {
 								return (
 									<div
 										key={index}
-										className={`${
-											index % 2 === 0 ? `bg-[#DEF6FF]` : `bg-[#ece2c1]`
-										} p-[20px] md:p-[40px] ${
+										className={`p-[20px] md:p-[40px] ${
 											activeAccordion === index
 												? "w-full lg:w-[924px]"
 												: "w-full lg:w-[100px]"
 										} transition-all duration-800 cursor-pointer`}
 										onClick={() => setActiveAccordion(index)}
+										style={{
+											backgroundColor: `${accordionBackgroundColor?.[index]}`,
+										}}
 									>
 										{activeAccordion === index && (
 											<div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px]">

@@ -40,12 +40,16 @@ const FeaturesSection = () => {
 									key={feature?.title}
 									className="bg-[#F8FAFD] p-[20px] rounded-[8px] flex flex-col gap-[15px]"
 								>
-									<img
-										src={feature?.icon}
-										alt={feature?.title}
-										className="max-w-[48px] max-h-[48px] w-full h-full"
-									/>
-									<h3 className="text-lg font-bold">{feature?.title}</h3>
+									<div className="flex flex-row md:flex-col gap-[10px] md:gap-[24px] items-center md:items-start">
+										<img
+											src={feature?.icon}
+											alt={feature?.title}
+											className="max-w-[30px] max-h-[30px] md:max-w-[48px] md:max-h-[48px] w-full h-full"
+										/>
+										<h3 className="text-[18px] md:text-[24px] font-bold">
+											{feature?.title}
+										</h3>
+									</div>
 									<p className="text-sm text-gray-500 text-[16px]">
 										{feature?.paragraph}
 									</p>

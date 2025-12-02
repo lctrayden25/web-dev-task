@@ -23,7 +23,9 @@ const GetPackage = () => {
 			<div className="text-4xl font-bold text-[24px] md:text-[28px] xl:text-[32px]">
 				Get the best value for the USA
 			</div>
-			<CustomButton onClick={handleGetPackage}>Get Package</CustomButton>
+			<CustomButton onClick={handleGetPackage} className="w-full max-w-[322px]">
+				Get Package
+			</CustomButton>
 		</div>
 	);
 };
