@@ -1,12 +1,21 @@
-import { apiUrl } from "@/utils/api";
-import { useQuery } from "@tanstack/react-query";
+// import { apiUrl } from "@/utils/api";
+// import type { Language } from "@/utils/constant";
+// import { getCountryCode } from "@/utils/helper";
+// import { useQuery } from "@tanstack/react-query";
+// import { useMemo } from "react";
+// import { useParams } from "react-router-dom";
 
 const HowWeCompare = () => {
+	// const { locale } = useParams<{ locale: Language }>();
+	// const countryCode = useMemo(
+	// 	() => getCountryCode(locale as Language),
+	// 	[locale]
+	// );
 	// const { data } = useQuery<unknown>({
-	// 	queryKey: ["HowWeCompare"],
+	// 	queryKey: ["HowWeCompare", locale],
 	// 	queryFn: () =>
-	// 		fetch(`${apiUrl}/content/HowWeCompare/US/en-US`).then((res) =>
-	// 			res.json()
+	// 		fetch(`${apiUrl}/content/HowWeCompare/${countryCode}/${locale}`).then(
+	// 			(res) => res.json()
 	// 		),
 	// });
 
