@@ -26,7 +26,7 @@ const CustomTab = ({
 	};
 	return (
 		<div className="flex flex-col gap-[24px]">
-			<div className="flex gap-[24px]">
+			<div className="flex gap-[24px] flex-wrap">
 				{tabs.map((tab) => (
 					<button
 						key={tab}

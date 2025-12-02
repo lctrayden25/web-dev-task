@@ -34,7 +34,7 @@ const BenefitFeature = () => {
 	if (error) return <ErrorDisplay message={error.message} />;
 
 	return (
-		<div className="relative py-[70px] px-[80px] w-full">
+		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full">
 			<div className="relative flex flex-col">
 				<h2 className="font-bold text-[32px]">{data?.title as string}</h2>
 				<div className="mt-5 flex flex-col gap-[24px]">

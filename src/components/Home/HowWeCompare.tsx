@@ -22,7 +22,7 @@ const HowWeCompare = () => {
 	// console.log({ data });
 
 	return (
-		<div className="relative py-[70px] px-[80px] w-full flex flex-col items-center justify-between">
+		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col items-center justify-between">
 			<div className="font-bold text-[32px]">
 				How we compare with other eSIM providers
 			</div>

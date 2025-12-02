@@ -13,7 +13,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const Header = () => {
 	const [searchText, setSearchText] = useState("");
 	return (
-		<div className="flex items-center justify-between py-[18px] px-[80px] border-b border-[#EBEBEB]">
+		<div className="flex items-center justify-between py-[18px] px-[20px] lg:px-[80px] border-b border-[#EBEBEB]">
 			<Link to="/">
 				<img
 					src={logo}
@@ -21,13 +21,13 @@ const Header = () => {
 					className="max-w-[204px] max-h-[33.8px] w-full h-full"
 				/>
 			</Link>
-			<div className="relative hidden sm:block">
+			<div className="relative hidden md:block">
 				<input
 					type="text"
 					placeholder="Where to next?"
 					value={searchText}
 					onChange={(e) => setSearchText(e.target.value)}
-					className="px-[16px] py-[12px] border border-[#EBEBEB] rounded-[8px] w-[111px] lg:w-[411px] xl:w-[411px] max-h-[48px]"
+					className="px-[16px] py-[12px] border border-[#EBEBEB] rounded-[8px] w-full xl:w-[411px] max-h-[48px]"
 				/>
 				<img
 					src={searchIcon}
@@ -35,7 +35,7 @@ const Header = () => {
 					className="absolute right-[16px] top-[50%] translate-y-[-50%] max-w-[24px] max-h-[24px]"
 				/>
 			</div>
-			<div className="flex items-center gap-[35px]">
+			<div className="hidden  md:flex items-center gap-[35px]">
 				<div className="relative flex items-center gap-[35px] text-[16px]">
 					<Link to="/explore" className="hover:opacity-60">
 						Explore

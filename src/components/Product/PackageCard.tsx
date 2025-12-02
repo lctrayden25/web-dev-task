@@ -19,7 +19,7 @@ const PackageCard = ({
 	return (
 		<div
 			className={cn(
-				"relative w-[242px] max-h-[80px] bg-white p-[16px] rounded-[8px] border border-[#D9D9D9] flex items-center justify-between",
+				"relative w-full md:w-[242px] max-h-[80px] bg-white p-[16px] rounded-[8px] border border-[#D9D9D9] flex items-center justify-between",
 				isBestValue ? "border-2 border-blue-700" : ""
 			)}
 		>
