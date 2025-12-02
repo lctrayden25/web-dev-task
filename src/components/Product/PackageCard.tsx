@@ -1,4 +1,3 @@
-import React from "react";
 import CustomImage from "../CustomImage";
 import switchVerticalIcon from "@/assets/icon/switch-vertical.svg";
 import calendarIcon from "@/assets/icon/calendar.svg";
