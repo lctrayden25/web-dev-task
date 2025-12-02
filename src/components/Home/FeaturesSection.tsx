@@ -1,8 +1,10 @@
 import { apiUrl, type FeaturesSectionType } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
+import Spinner from "../Spinner";
+import ErrorDisplay from "../ErrorDisplay";
 
 const FeaturesSection = () => {
-	const { data } = useQuery<FeaturesSectionType>({
+	const { data, isLoading, error } = useQuery<FeaturesSectionType>({
 		queryKey: ["FeaturesSection"],
 		queryFn: () =>
 			fetch(`${apiUrl}/content/FeaturesSection/US/en-US`).then((res) =>
@@ -11,6 +13,9 @@ const FeaturesSection = () => {
 	});
 
 	const featuresData = data?.features ?? undefined;
+
+	if (isLoading) return <Spinner />;
+	if (error) return <ErrorDisplay message={error.message} />;
 
 	return (
 		<div className="relative py-[70px] px-[80px] w-full">

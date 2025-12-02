@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import CustomImage from "../CustomImage";
+import Spinner from "../Spinner";
+import ErrorDisplay from "../ErrorDisplay";
 
 const BenefitFeature = () => {
 	const [activeAccordion, setActiveAccordion] = useState<number>(0);
@@ -28,8 +30,8 @@ const BenefitFeature = () => {
 		},
 	});
 
-	if (isLoading) return <div>Loading...</div>;
-	if (error) return <div>Error: {error.message}</div>;
+	if (isLoading) return <Spinner />;
+	if (error) return <ErrorDisplay message={error.message} />;
 
 	return (
 		<div className="relative py-[70px] px-[80px] w-full">
