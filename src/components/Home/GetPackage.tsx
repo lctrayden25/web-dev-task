@@ -1,7 +1,12 @@
 import getPackageBg from "@/assets/images/get-package-bg.png";
 import CustomButton from "../CustomButton";
+import { useNavigate } from "react-router-dom";
 
 const GetPackage = () => {
+	const navigate = useNavigate();
+	const handleGetPackage = () => {
+		navigate("/packages");
+	};
 	return (
 		<div
 			className="relative py-[70px] px-[80px] w-full flex flex-col gap-[24px] items-center justify-center"
@@ -18,7 +23,7 @@ const GetPackage = () => {
 			<div className="text-4xl font-bold text-[32px]">
 				Get the best value for the USA
 			</div>
-			<CustomButton>Get Package</CustomButton>
+			<CustomButton onClick={handleGetPackage}>Get Package</CustomButton>
 		</div>
 	);
 };

@@ -1,5 +1,7 @@
 import { apiUrl, type HowToGetStartedType } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
+import Spinner from "../Spinner";
+import ErrorDisplay from "../ErrorDisplay";
 
 const HowToGetStart = () => {
 	const { data, isLoading, error } = useQuery<HowToGetStartedType>({
@@ -10,8 +12,8 @@ const HowToGetStart = () => {
 			),
 	});
 
-	if (isLoading) return <div>Loading...</div>;
-	if (error) return <div>Error: {error.message}</div>;
+	if (isLoading) return <Spinner />;
+	if (error) return <ErrorDisplay message={error.message} />;
 
 	return (
 		<div className="relative py-[70px] px-[80px] w-full">

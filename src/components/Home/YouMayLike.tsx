@@ -1,8 +1,13 @@
 import youMayLikeBg from "@/assets/images/you-may-like-bg.png";
 import CustomImage from "../CustomImage";
 import CustomButton from "../CustomButton";
+import { useNavigate } from "react-router-dom";
 
 const YouMayLike = () => {
+	const navigate = useNavigate();
+	const handleGetPackage = () => {
+		navigate("/packages");
+	};
 	return (
 		<div
 			className="relative py-[70px] px-[80px] w-full flex flex-col gap-[24px] items-center justify-center max-h-[489px]"
@@ -19,7 +24,7 @@ const YouMayLike = () => {
 					<p className="font-light text-[18px]">YOU MAY ALSO LIKE</p>
 					<h2 className="font-bold text-[32px]">Europe Regional Package</h2>
 					<p className="text-sm text-gray-500 text-[18px]">From $15,99</p>
-					<CustomButton>Get packages</CustomButton>
+					<CustomButton onClick={handleGetPackage}>Get package</CustomButton>
 				</div>
 			</div>
 		</div>
