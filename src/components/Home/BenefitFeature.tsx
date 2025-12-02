@@ -73,23 +73,27 @@ const BenefitFeature = () => {
 										key={index}
 										className={`${
 											index % 2 === 0 ? `bg-[#DEF6FF]` : `bg-[#ece2c1]`
-										} p-[40px] ${
-											activeAccordion === index ? "w-[924px]" : "w-[100px]"
-										} transition-all duration-800`}
+										} p-[20px] md:p-[40px] ${
+											activeAccordion === index
+												? "w-full lg:w-[924px]"
+												: "w-full lg:w-[100px]"
+										} transition-all duration-800 cursor-pointer`}
 										onClick={() => setActiveAccordion(index)}
 									>
 										{activeAccordion === index && (
-											<div className="grid grid-cols-2 gap-[24px]">
-												<div className="flex flex-col gap-[24px]">
-													<div className="flex flex-col gap-[16px] bg-white p-[40px] rounded-[15px]">
-														<CustomImage
-															src={accordion.icon}
-															alt={accordion.title}
-															className="w-full h-full max-w-[36px] max-h-[40px]"
-														/>
-														<h3 className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
-															{accordion.title}
-														</h3>
+											<div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px]">
+												<div className="flex flex-col gap-[10px] md:gap-[24px]">
+													<div className="flex flex-col gap-[16px] bg-white p-[20px] md:p-[40px] rounded-[15px]">
+														<div className="flex flex-row md:flex-col gap-[10px] md:gap-[24px]">
+															<CustomImage
+																src={accordion.icon}
+																alt={accordion.title}
+																className="w-full h-full max-w-[24px] max-h-[24px] md:max-w-[36px] md:max-h-[40px]"
+															/>
+															<h3 className="font-bold text-[18px] md:text-[28px] xl:text-[32px]">
+																{accordion.title}
+															</h3>
+														</div>
 														<p className="text-[16px] text-[#666666] leading-[20px]">
 															{accordion.paragraph}
 														</p>
@@ -103,7 +107,7 @@ const BenefitFeature = () => {
 																) => {
 																	return (
 																		<div className="flex items-center gap-[24px]">
-																			<div className="p-[20px] bg-white rounded-full">
+																			<div className="p-[10px] md:p-[20px] bg-white rounded-full">
 																				<CustomImage
 																					src={accIcon?.iconUrl}
 																					alt={accIcon?.iconId || ""}
@@ -127,7 +131,7 @@ const BenefitFeature = () => {
 													// src={accordion.image ?? undefined}
 													src={undefined}
 													alt={accordion?.title || ""}
-													className="w-full h-full max-w-[360px] max-h-[460px] rounded-[10px] object-center"
+													className="hidden md:block w-full h-full max-w-[360px] max-h-[460px] rounded-[10px] object-center"
 												/>
 											</div>
 										)}
