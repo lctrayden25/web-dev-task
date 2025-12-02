@@ -106,7 +106,11 @@ const BenefitFeature = () => {
 																					className="w-full h-full max-w-[36px] max-h-[36px]"
 																				/>
 																			</div>
-																			<span>{accIcon?.text || ""}</span>
+																			<span>
+																				{accIcon?.text ||
+																					accIcon?.iconId ||
+																					"App Name"}
+																			</span>
 																		</div>
 																	);
 																}
