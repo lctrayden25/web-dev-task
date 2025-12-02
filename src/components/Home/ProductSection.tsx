@@ -12,8 +12,6 @@ import shieldIcon from "@/assets/icon/shield-tick.svg";
 import CustomTab from "../CustomTab";
 import { Link } from "react-router-dom";
 
-// import
-
 const dummyThumbCarouselData = [
 	productThumb,
 	placeholderImage,
