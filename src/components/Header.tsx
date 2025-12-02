@@ -1,17 +1,24 @@
 import logo from "@/assets/icon/logo.svg";
-import searchIcon from "@/assets/icon/search-icon.svg";
 import currency from "@/assets/icon/currency.svg";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SearchInput from "./SearchInput";
+import { MdMenu } from "react-icons/md";
+import { useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 // type HeaderProps = {
 // 	children?: React.ReactNode;
 // };
 
 const Header = () => {
-	const [searchText, setSearchText] = useState("");
+	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+	const handleMenuOpen = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
 	return (
 		<div className="flex items-center justify-between py-[18px] px-[20px] lg:px-[80px] border-b border-[#EBEBEB]">
 			<Link to="/">
@@ -21,21 +28,8 @@ const Header = () => {
 					className="max-w-[204px] max-h-[33.8px] w-full h-full"
 				/>
 			</Link>
-			<div className="relative hidden md:block">
-				<input
-					type="text"
-					placeholder="Where to next?"
-					value={searchText}
-					onChange={(e) => setSearchText(e.target.value)}
-					className="px-[16px] py-[12px] border border-[#EBEBEB] rounded-[8px] w-full xl:w-[411px] max-h-[48px]"
-				/>
-				<img
-					src={searchIcon}
-					alt="search"
-					className="absolute right-[16px] top-[50%] translate-y-[-50%] max-w-[24px] max-h-[24px]"
-				/>
-			</div>
-			<div className="hidden  md:flex items-center gap-[35px]">
+			<SearchInput isMenuOpen={isMenuOpen} />
+			<div className="hidden md:flex items-center gap-[35px]">
 				<div className="relative flex items-center gap-[35px] text-[16px]">
 					<Link to="/explore" className="hover:opacity-60">
 						Explore
@@ -50,7 +44,7 @@ const Header = () => {
 							className="max-w-[20px] max-h-[18px]"
 						/>
 					</button> */}
-					<LanguageSwitcher />
+					<LanguageSwitcher isMenuOpen={isMenuOpen} />
 				</div>
 				<div className="relative flex items-center gap-[35px] text-[16px]">
 					<button className="cursor-pointer">
@@ -66,6 +60,11 @@ const Header = () => {
 					</CustomButton>
 				</div>
 			</div>
+			<MdMenu
+				className="block text-[24px] cursor-pointer md:hidden"
+				onClick={handleMenuOpen}
+			/>
+			{isMenuOpen && <MobileMenu isOpen={isMenuOpen} onClose={setIsMenuOpen} />}
 		</div>
 	);
 };

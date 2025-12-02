@@ -5,7 +5,11 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const LanguageSwitcher = () => {
+type LanguageSwitcherProps = {
+	isMenuOpen: boolean;
+};
+
+const LanguageSwitcher = ({ isMenuOpen }: LanguageSwitcherProps) => {
 	const { i18n } = useTranslation();
 	const [isShow, setIsShow] = useState<boolean>(false);
 	const navigate = useNavigate();
@@ -22,13 +26,13 @@ const LanguageSwitcher = () => {
 		// if splitPathname?.[1] === "zh-HK", then splitPathname?.[3] must be the path without locale
 		// if splitPathname?.[1] !== "zh-HK" (no locale appended in the path), then splitPathname?.[2] must be the path without locale
 		if (!supportedLngs.includes(splitPathname?.[1])) {
-			navigate(`/${language}/${splitPathname?.[3]}`);
+			navigate(`/${language}/${splitPathname?.[3]}${location?.search}`);
 		} else {
 			// console.log({ splitPathname });
 			const newSlicePathname = splitPathname
 				?.slice(2, splitPathname?.length)
 				?.join("/");
-			navigate(`/${language}/${newSlicePathname}`);
+			navigate(`/${language}/${newSlicePathname}${location?.search}`);
 		}
 
 		setIsShow(false);
@@ -37,16 +41,33 @@ const LanguageSwitcher = () => {
 	const buttonClassName = "hover:text-red-500 cursor-pointer scale-110";
 
 	return (
-		<div className="relative max-h-[18px]">
-			<button className="cursor-pointer" onClick={() => setIsShow(!isShow)}>
+		<div
+			className={`relative max-h-[18px] ${
+				isMenuOpen ? "z-50 flex gap-[10px] items-center" : ""
+			}`}
+		>
+			<button
+				className="cursor-pointer disabled:cursor-default disabled:opacity-100 hover:opacity-60"
+				onClick={() => {
+					return isMenuOpen ? undefined : setIsShow(!isShow);
+				}}
+				disabled={isMenuOpen}
+			>
 				<img
 					src={translateIcon}
 					alt="translate"
-					className="max-w-[20px] max-h-[18px] hover:opacity-60"
+					className="max-w-[20px] max-h-[18px] "
 				/>
 			</button>
-			{isShow && (
-				<div className="absolute top-full left-[50%] translate-x-[-50%] bg-white shadow-md w-[100px] flex gap-[10px] justify-between items-center p-2">
+			{isMenuOpen && <div> | </div>}
+			{(isShow || isMenuOpen) && (
+				<div
+					className={`${
+						isMenuOpen
+							? "relative"
+							: "absolute top-full left-[50%] translate-x-[-50%] bg-white shadow-md"
+					}  w-[100px] flex gap-[10px] justify-between items-center p-2`}
+				>
 					<button
 						onClick={() => handleLanguageChange(Language.EN)}
 						className={cn(

@@ -26,7 +26,8 @@ const LocalizedRoutes = () => {
 	if (!supportedLngs.includes(locale as Language as string)) {
 		// console.log({ slicePath: pathname.slice(1, pathname.length) });
 		const newPathname = pathname.slice(1, pathname.length)?.join("/");
-		const appendLocalePath = `/${i18n?.language}/${newPathname}`;
+		const appendLocalePath = `/${i18n?.language}/${newPathname}${location?.search}`;
+
 		return <Navigate to={appendLocalePath} replace />;
 	}
 
