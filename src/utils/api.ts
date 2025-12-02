@@ -21,3 +21,17 @@ export type HowToGetStartedType = {
 		image: string;
 	}[];
 };
+
+export type BenefitFeatureType = {
+	title: string;
+	accordions: {
+		icon: string;
+		title: string;
+		paragraph: string;
+		apps: {
+			iconUrl: string;
+			iconId: string;
+			text: string;
+		}[];
+	}[];
+};
