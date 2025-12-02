@@ -9,7 +9,7 @@ const GetPackage = () => {
 	};
 	return (
 		<div
-			className="relative py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col gap-[24px] items-center justify-center"
+			className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col gap-[24px] items-center justify-center"
 			style={{
 				backgroundImage: `url(${getPackageBg})`,
 				backgroundPosition: "center",

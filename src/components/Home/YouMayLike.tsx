@@ -10,7 +10,7 @@ const YouMayLike = () => {
 	};
 	return (
 		<div
-			className="relative mt-8 md:mt-0 py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col gap-[24px] items-center justify-center max-h-[489px]"
+			className="relative mt-8 md:mt-0 py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col gap-[24px] items-center justify-center max-h-[489px]"
 			style={{
 				backgroundImage: `url(${youMayLikeBg})`,
 				backgroundPosition: "center",

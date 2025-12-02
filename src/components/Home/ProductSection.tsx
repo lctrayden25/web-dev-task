@@ -36,7 +36,7 @@ const DescriptionTabRender = () => {
 const ProductSection = () => {
 	return (
 		<div
-			className="relative py-[70px] px-[20px] lg:px-[80px] w-full bg-cover bg-center flex flex-col md:flex-row gap-[50px]"
+			className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full bg-cover bg-center flex flex-col md:flex-row gap-[50px]"
 			style={{ backgroundImage: `url(${productSectionBg})` }}
 		>
 			<div className="max-w-auto md:max-w-[364px] xl:max-w-[464px] w-full">

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const GetTheAppSection = () => {
 	return (
-		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full">
+		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">
 			<div className="relative flex flex-col md:flex-row gap-[24px] md:gap-[50px] lg:gap-[107px] items-center justify-center">
 				<div className="max-w-[475px]">
 					<CustomImage src={undefined} alt="get the app" />

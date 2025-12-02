@@ -12,7 +12,7 @@ const WhyUsSection = () => {
 	const lastThreeFeatures = whyUsSectionData?.features?.slice(3);
 
 	return (
-		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full bg-cover bg-center flex flex-col gap-[24px]">
+		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full bg-cover bg-center flex flex-col gap-[24px]">
 			<div className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
 				{whyUsSectionData?.title}
 			</div>

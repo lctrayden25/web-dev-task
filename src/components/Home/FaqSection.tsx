@@ -5,7 +5,7 @@ const FaqSection = () => {
 	const faqData = dummyFaqData;
 
 	return (
-		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col items-center justify-between mt-10">
+		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col items-center justify-between mt-10">
 			<div className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
 				Frequently Asked Questions
 			</div>

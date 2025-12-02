@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ResourceSection = () => {
 	const data = dummyResourceData;
 	return (
-		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full">
+		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">
 			<div className="relative flex flex-col gap-[24px]">
 				<h2 className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
 					{"Useful resources from our blog"}
