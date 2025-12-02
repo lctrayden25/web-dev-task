@@ -9,8 +9,8 @@ type LayoutProps = {
 const Layout = ({ children, showHeader = true }: LayoutProps) => {
 	return (
 		<div className="bg-white w-full">
-			<div className="min-h-screen w-full max-w-[1440px] mx-auto">
-				<div className="relative flex flex-col max-w-[1280px] w-full mx-auto ">
+			<div className="min-h-screen w-full max-w-auto md:max-w-[1440px] mx-auto">
+				<div className="relative flex flex-col  w-full mx-auto ">
 					{showHeader && <Header />}
 					{children}
 				</div>

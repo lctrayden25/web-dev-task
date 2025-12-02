@@ -1,5 +1,6 @@
 import translateIcon from "@/assets/icon/translate.svg";
 import { Language } from "@/utils/constant";
+import { cn } from "@/utils/helper";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -23,24 +24,56 @@ const LanguageSwitcher = () => {
 		if (!supportedLngs.includes(splitPathname?.[1])) {
 			navigate(`/${language}/${splitPathname?.[3]}`);
 		} else {
-			navigate(`/${language}/${splitPathname?.[2]}`);
+			// console.log({ splitPathname });
+			const newSlicePathname = splitPathname
+				?.slice(2, splitPathname?.length)
+				?.join("/");
+			navigate(`/${language}/${newSlicePathname}`);
 		}
+
+		setIsShow(false);
 	};
 
+	const buttonClassName = "hover:text-red-500 cursor-pointer scale-110";
+
 	return (
-		<div className="relative">
+		<div className="relative max-h-[18px]">
 			<button className="cursor-pointer" onClick={() => setIsShow(!isShow)}>
 				<img
 					src={translateIcon}
 					alt="translate"
-					className="max-w-[20px] max-h-[18px]"
+					className="max-w-[20px] max-h-[18px] hover:opacity-60"
 				/>
 			</button>
 			{isShow && (
-				<div className="absolute top-full left-0 w-full bg-white shadow-md">
-					<button onClick={() => handleLanguageChange(Language.EN)}>EN</button>
-					<button onClick={() => handleLanguageChange(Language.ZH)}>繁</button>
-					<button onClick={() => handleLanguageChange(Language.CN)}>簡</button>
+				<div className="absolute top-full left-[50%] translate-x-[-50%] bg-white shadow-md w-[100px] flex gap-[10px] justify-between items-center p-2">
+					<button
+						onClick={() => handleLanguageChange(Language.EN)}
+						className={cn(
+							buttonClassName,
+							i18n.language === Language.EN ? "text-red-500" : ""
+						)}
+					>
+						EN
+					</button>
+					<button
+						onClick={() => handleLanguageChange(Language.TC)}
+						className={cn(
+							buttonClassName,
+							i18n.language === Language.TC ? "text-red-500" : ""
+						)}
+					>
+						繁
+					</button>
+					<button
+						onClick={() => handleLanguageChange(Language.SC)}
+						className={cn(
+							buttonClassName,
+							i18n.language === Language.SC ? "text-red-500" : ""
+						)}
+					>
+						簡
+					</button>
 				</div>
 			)}
 		</div>

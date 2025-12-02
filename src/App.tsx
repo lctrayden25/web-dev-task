@@ -13,6 +13,7 @@ import Packages from "./pages/Packages";
 import ResourceDetail from "./pages/ResourceDetail";
 import { useTranslation } from "react-i18next";
 import { Language } from "./utils/constant";
+import ProductDetail from "./pages/ProductDetail";
 
 const LocalizedRoutes = () => {
 	const { locale } = useParams<{ locale: Language }>();
@@ -23,7 +24,9 @@ const LocalizedRoutes = () => {
 
 	// append the locale to the path if it is not supported
 	if (!supportedLngs.includes(locale as Language as string)) {
-		const appendLocalePath = `/${i18n?.language}/${pathname?.[1]}`;
+		// console.log({ slicePath: pathname.slice(1, pathname.length) });
+		const newPathname = pathname.slice(1, pathname.length)?.join("/");
+		const appendLocalePath = `/${i18n?.language}/${newPathname}`;
 		return <Navigate to={appendLocalePath} replace />;
 	}
 
@@ -33,7 +36,8 @@ const LocalizedRoutes = () => {
 			<Route path="/explore" element={<Explore />} />
 			<Route path="/help" element={<Help />} />
 			<Route path="/packages" element={<Packages />} />
-			<Route path="/resource/:id" element={<ResourceDetail />} />
+			<Route path="/resource/:resourceId" element={<ResourceDetail />} />
+			<Route path="/product/:productId" element={<ProductDetail />} />
 		</Routes>
 	);
 };

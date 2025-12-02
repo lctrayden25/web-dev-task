@@ -1,6 +1,5 @@
 import logo from "@/assets/icon/logo.svg";
 import searchIcon from "@/assets/icon/search-icon.svg";
-import translateIcon from "@/assets/icon/translate.svg";
 import currency from "@/assets/icon/currency.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -38,8 +37,12 @@ const Header = () => {
 			</div>
 			<div className="flex items-center gap-[35px]">
 				<div className="relative flex items-center gap-[35px] text-[16px]">
-					<Link to="/explore">Explore</Link>
-					<Link to="/help">Help</Link>
+					<Link to="/explore" className="hover:opacity-60">
+						Explore
+					</Link>
+					<Link to="/help" className="hover:opacity-60">
+						Help
+					</Link>
 					{/* <button className="cursor-pointer">
 						<img
 							src={translateIcon}
