@@ -29,7 +29,9 @@ const FeaturesSection = () => {
 	return (
 		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full">
 			<div className="relative flex flex-col gap-[24px]">
-				<h2 className="font-bold text-[32px]">{data?.title as string}</h2>
+				<h2 className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
+					{data?.title as string}
+				</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
 					{featuresData?.map(
 						(feature: FeaturesSectionType["features"][number]) => {

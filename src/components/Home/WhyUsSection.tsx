@@ -13,7 +13,9 @@ const WhyUsSection = () => {
 
 	return (
 		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full bg-cover bg-center flex flex-col gap-[24px]">
-			<div className="font-bold text-[32px]">{whyUsSectionData?.title}</div>
+			<div className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
+				{whyUsSectionData?.title}
+			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[14px]">
 				<div className="flex flex-col gap-[24px]">
 					{firstThreeFeatures?.map((item) => WhyUsCard({ ...item }))}

@@ -17,10 +17,10 @@ const GetPackage = () => {
 				backgroundRepeat: "no-repeat",
 			}}
 		>
-			<div className="text-2xl font-light text-[18px]">
+			<div className="text-2xl font-light text-[15px] md:text-[18px]">
 				BEST VALUE FOR THE USA
 			</div>
-			<div className="text-4xl font-bold text-[32px]">
+			<div className="text-4xl font-bold text-[24px] md:text-[28px] xl:text-[32px]">
 				Get the best value for the USA
 			</div>
 			<CustomButton onClick={handleGetPackage}>Get Package</CustomButton>

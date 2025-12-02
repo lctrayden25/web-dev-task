@@ -34,9 +34,11 @@ const BenefitFeature = () => {
 	if (error) return <ErrorDisplay message={error.message} />;
 
 	return (
-		<div className="relative py-[70px] px-[20px] lg:px-[80px] w-full">
+		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">
 			<div className="relative flex flex-col">
-				<h2 className="font-bold text-[32px]">{data?.title as string}</h2>
+				<h2 className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
+					{data?.title as string}
+				</h2>
 				<div className="mt-5 flex flex-col gap-[24px]">
 					<div className="flex gap-5 flex-wrap">
 						{data?.accordions?.map(
@@ -85,7 +87,7 @@ const BenefitFeature = () => {
 															alt={accordion.title}
 															className="w-full h-full max-w-[36px] max-h-[40px]"
 														/>
-														<h3 className="font-bold text-[24px]">
+														<h3 className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
 															{accordion.title}
 														</h3>
 														<p className="text-[16px] text-[#666666] leading-[20px]">

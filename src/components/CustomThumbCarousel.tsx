@@ -18,7 +18,7 @@ const CustomThumbCarousel = ({ slides }: CustomThumbCarouselProps) => {
 				<CustomImage
 					src={slides[selectedIndex]}
 					alt={`slide ${selectedIndex + 1}`}
-					className="w-[464px] h-[464px] rounded-[1.8rem] object-contain"
+					className="w-full md:w-[464px] h-full md:h-[464px] rounded-[1.8rem] object-contain"
 				/>
 			</div>
 			<div className="flex gap-[16px]">
