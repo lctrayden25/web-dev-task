@@ -10,7 +10,6 @@ const WhyUsSection = () => {
 	const whyUsSectionData = dummyWhyUsSectionData as WhyUsSectionType;
 	const firstThreeFeatures = whyUsSectionData?.features?.slice(0, 3);
 	const lastThreeFeatures = whyUsSectionData?.features?.slice(3);
-	console.log({ firstThreeFeatures, lastThreeFeatures });
 
 	return (
 		<div className="relative py-[70px] px-[80px] w-full bg-cover bg-center flex flex-col gap-[24px]">
