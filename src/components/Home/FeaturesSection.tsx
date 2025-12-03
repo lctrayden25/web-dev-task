@@ -1,11 +1,11 @@
 import { apiUrl, type FeaturesSectionType } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../Spinner";
-import ErrorDisplay from "../ErrorDisplay";
 import type { Language } from "@/utils/constant";
 import { useParams } from "react-router-dom";
 import { useMemo } from "react";
 import { getCountryCode } from "@/utils/helper";
+import { toast } from "react-toastify";
 
 const FeaturesSection = () => {
 	const { locale } = useParams<{ locale: Language }>();
@@ -15,16 +15,27 @@ const FeaturesSection = () => {
 	);
 	const { data, isLoading, error } = useQuery<FeaturesSectionType>({
 		queryKey: ["FeaturesSection", locale],
-		queryFn: () =>
-			fetch(`${apiUrl}/content/FeaturesSection/${countryCode}/${locale}`).then(
-				(res) => res.json()
-			),
+		queryFn: async () => {
+			try {
+				if (!locale || !countryCode) {
+					toast.error("Locale or countryCode is required");
+					return;
+				}
+				const response = await fetch(
+					`${apiUrl}/content/FeaturesSection/${countryCode}/${locale}`
+				).then((res) => res.json());
+
+				return response;
+			} catch (error) {
+				console.log(error);
+			}
+		},
 	});
 
 	const featuresData = data?.features ?? undefined;
 
 	if (isLoading) return <Spinner />;
-	if (error) return <ErrorDisplay message={error.message} />;
+	if (error) toast.error(error?.message || "Something went wrong");
 
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">

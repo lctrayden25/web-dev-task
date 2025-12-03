@@ -6,8 +6,7 @@ import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import CustomImage from "../CustomImage";
 import Spinner from "../Spinner";
-import ErrorDisplay from "../ErrorDisplay";
-
+import { toast } from "react-toastify";
 const accordionBackgroundColor = [
 	"#EFFBFF",
 	"#DEF6FF",
@@ -27,6 +26,10 @@ const BenefitFeature = () => {
 		queryKey: ["BenefitsSection", locale],
 		queryFn: async () => {
 			try {
+				if (!locale || !countryCode) {
+					toast.error("Locale or countryCode is required");
+					return;
+				}
 				const response = await fetch(
 					`${apiUrl}/content/BenefitsSection/${countryCode}/${locale}`
 				).then((res) => res.json());
@@ -39,7 +42,7 @@ const BenefitFeature = () => {
 	});
 
 	if (isLoading) return <Spinner />;
-	if (error) return <ErrorDisplay message={error.message} />;
+	if (error) toast.error(error?.message || "Something went wrong");
 
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">
