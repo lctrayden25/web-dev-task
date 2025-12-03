@@ -1,4 +1,8 @@
 {
 	"welcome": "Welcome to our app",
-	"description": "Your go-to multilingual React application."
+	"description": "Your go-to multilingual React application.",
+	"readMore": "Read more",
+	"explore": "Explore",
+	"help": "Help",
+	"signInSignUp": "Sign in | Sing up"
 }

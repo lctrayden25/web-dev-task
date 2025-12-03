@@ -6,6 +6,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import SearchInput from "./SearchInput";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type MobileMenuProps = {
 	isOpen: boolean;
@@ -13,6 +14,7 @@ type MobileMenuProps = {
 };
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+	const { t } = useTranslation();
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(isOpen);
 
 	const handleMenuClose = (isOpen: boolean) => {
@@ -47,14 +49,14 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 			</div>
 			<div className="flex flex-col gap-[24px]">
 				<Link to="/explore" className="hover:opacity-60">
-					Explore
+					{t("explore")}
 				</Link>
 				<Link to="/help" className="hover:opacity-60">
-					Help
+					{t("help")}
 				</Link>
 				<LanguageSwitcher isMenuOpen={isOpen} />
 				<CustomButton onClick={() => console.log("sign in|sign up")}>
-					Sign in | Sign up
+					{t("signInSignUp")}
 				</CustomButton>
 			</div>
 		</div>

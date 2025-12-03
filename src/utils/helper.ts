@@ -18,6 +18,8 @@ export function getCountryCode(locale: Language) {
 			return "HK";
 		case Language.SC:
 			return "CN";
+		case Language.FR:
+			return "FR";
 		default:
 			return "US";
 	}

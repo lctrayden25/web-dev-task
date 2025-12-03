@@ -1,4 +1,8 @@
 {
 	"welcome": "歡迎簡體",
-	"description": "你好簡體"
+	"description": "你好簡體",
+	"readMore": "查看更多",
+	"explore": "探索",
+	"help": "帮助",
+	"signInSignUp": "登入 | 注册"
 }

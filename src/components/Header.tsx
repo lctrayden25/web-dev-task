@@ -7,12 +7,14 @@ import SearchInput from "./SearchInput";
 import { MdMenu } from "react-icons/md";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
+import { useTranslation } from "react-i18next";
 
 // type HeaderProps = {
 // 	children?: React.ReactNode;
 // };
 
 const Header = () => {
+	const { t } = useTranslation();
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
 	const handleMenuOpen = () => {
@@ -32,10 +34,10 @@ const Header = () => {
 			<div className="hidden md:flex items-center gap-[35px]">
 				<div className="relative flex items-center gap-[35px] text-[16px]">
 					<Link to="/explore" className="hover:opacity-60">
-						Explore
+						{t("explore")}
 					</Link>
 					<Link to="/help" className="hover:opacity-60">
-						Help
+						{t("help")}
 					</Link>
 					{/* <button className="cursor-pointer">
 						<img
@@ -56,7 +58,7 @@ const Header = () => {
 					</button>
 
 					<CustomButton onClick={() => console.log("sign in|sign up")}>
-						Sign in | Sign up
+						{t("signInSignUp")}
 					</CustomButton>
 				</div>
 			</div>

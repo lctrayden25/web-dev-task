@@ -1,4 +1,8 @@
 {
 	"welcome": "歡迎",
-	"description": "你好"
+	"description": "你好",
+	"readMore": "查看更多",
+	"explore": "探索",
+	"help": "幫助",
+	"signInSignUp": "登入 | 註冊"
 }

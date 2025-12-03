@@ -1,5 +1,11 @@
 ## Getting Started
 
+Requirement
+
+```bash
+Node v22.17.0 or above
+```
+
 Start the development server (localhost)
 
 ```bash
@@ -26,3 +32,7 @@ Build the project
 
 - deployed on vercel
 - preview url: https://web-dev-task-flax.vercel.app/en-US/
+
+## Improvement
+
+- add localization to content that from api

@@ -1,5 +1,5 @@
 import translateIcon from "@/assets/icon/translate.svg";
-import { Language } from "@/utils/constant";
+import { Language, languageMap } from "@/utils/constant";
 import { cn } from "@/utils/helper";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -68,33 +68,19 @@ const LanguageSwitcher = ({ isMenuOpen }: LanguageSwitcherProps) => {
 							: "absolute top-full left-[50%] translate-x-[-50%] bg-white shadow-md"
 					}  w-[100px] flex gap-[10px] justify-between items-center p-2`}
 				>
-					<button
-						onClick={() => handleLanguageChange(Language.EN)}
-						className={cn(
-							buttonClassName,
-							i18n.language === Language.EN ? "text-red-500" : ""
-						)}
-					>
-						EN
-					</button>
-					<button
-						onClick={() => handleLanguageChange(Language.TC)}
-						className={cn(
-							buttonClassName,
-							i18n.language === Language.TC ? "text-red-500" : ""
-						)}
-					>
-						繁
-					</button>
-					<button
-						onClick={() => handleLanguageChange(Language.SC)}
-						className={cn(
-							buttonClassName,
-							i18n.language === Language.SC ? "text-red-500" : ""
-						)}
-					>
-						簡
-					</button>
+					{Object.keys(languageMap)?.map((language: string) => {
+						return (
+							<button
+								onClick={() => handleLanguageChange(language as Language)}
+								className={cn(
+									buttonClassName,
+									i18n.language === language ? "text-red-500" : ""
+								)}
+							>
+								{languageMap[language as Language]}
+							</button>
+						);
+					})}
 				</div>
 			)}
 		</div>

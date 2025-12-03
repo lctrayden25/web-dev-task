@@ -11,6 +11,7 @@ import headphoneIcon from "@/assets/icon/headphones.svg";
 import shieldIcon from "@/assets/icon/shield-tick.svg";
 import CustomTab from "../CustomTab";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const dummyThumbCarouselData = [
 	productThumb,
@@ -34,6 +35,8 @@ const DescriptionTabRender = () => {
 };
 
 const ProductSection = () => {
+	const { t } = useTranslation();
+
 	return (
 		<div
 			className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full bg-cover bg-center flex flex-col md:flex-row gap-[50px]"
@@ -134,7 +137,7 @@ const ProductSection = () => {
 
 				<div className="mt-1">
 					<Link to="/product/1" className="text-[#B02235] font-bold">
-						Read more
+						{t("readMore")}
 					</Link>
 				</div>
 			</div>

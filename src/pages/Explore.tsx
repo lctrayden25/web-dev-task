@@ -8,7 +8,7 @@ const Explore = () => {
 	return (
 		<Layout>
 			<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">
-				Search Result for {searchText}: 0
+				{!searchText ? "Explore Now" : `Search Result for ${searchText}: 0`}
 			</div>
 		</Layout>
 	);
