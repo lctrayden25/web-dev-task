@@ -5,8 +5,11 @@ import {
 import whyUsSectionLogo from "@/assets/images/why-us-logo.png";
 import whyUsSectionBg from "@/assets/images/why-us-bg.png";
 import WhyUsCard from "../WhyUsCard";
+import { useParams } from "react-router-dom";
+import type { Language } from "@/utils/constant";
 
 const WhyUsSection = () => {
+	const { locale } = useParams<{ locale: Language }>();
 	const whyUsSectionData = dummyWhyUsSectionData as WhyUsSectionType;
 	const firstThreeFeatures = whyUsSectionData?.features?.slice(0, 3);
 	const lastThreeFeatures = whyUsSectionData?.features?.slice(3);
@@ -14,11 +17,19 @@ const WhyUsSection = () => {
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full bg-cover bg-center flex flex-col gap-[24px]">
 			<div className="font-bold text-[24px] md:text-[28px] xl:text-[32px]">
-				{whyUsSectionData?.title}
+				{whyUsSectionData?.title?.[locale as Language]}
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[14px]">
 				<div className="flex flex-col gap-[24px]">
-					{firstThreeFeatures?.map((item) => WhyUsCard({ ...item }))}
+					{firstThreeFeatures?.map((item) => (
+						<WhyUsCard
+							key={item.id}
+							id={item.id}
+							title={item.title?.[locale as Language]}
+							description={item.content?.[locale as Language]}
+							icon={item.icon}
+						/>
+					))}
 				</div>
 				<div
 					className="relative h-full rounded-[8px] items-center justify-center hidden lg:flex"
@@ -36,7 +47,17 @@ const WhyUsSection = () => {
 					/>
 				</div>
 				<div className="flex flex-col gap-[24px]">
-					{lastThreeFeatures?.map((item) => WhyUsCard({ ...item }))}
+					{lastThreeFeatures?.map((item) => {
+						return (
+							<WhyUsCard
+								key={item.id}
+								id={item.id}
+								title={item.title?.[locale as Language]}
+								description={item.content?.[locale as Language]}
+								icon={item.icon}
+							/>
+						);
+					})}
 				</div>
 			</div>
 		</div>

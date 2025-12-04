@@ -2,13 +2,22 @@ import { apiUrl, type HowToGetStartedType } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../Spinner";
 import ErrorDisplay from "../ErrorDisplay";
+import type { Language } from "@/utils/constant";
+import { useParams } from "react-router-dom";
+import { useMemo } from "react";
+import { getCountryCode } from "@/utils/helper";
 
 const HowToGetStart = () => {
+	const { locale } = useParams<{ locale: Language }>();
+	const countryCode = useMemo(
+		() => getCountryCode(locale as Language),
+		[locale]
+	);
 	const { data, isLoading, error } = useQuery<HowToGetStartedType>({
-		queryKey: ["HowToGetStarted"],
+		queryKey: ["HowToGetStarted", locale],
 		queryFn: () =>
-			fetch(`${apiUrl}/content/HowToGetStarted/US/en-US`).then((res) =>
-				res.json()
+			fetch(`${apiUrl}/content/HowToGetStarted/${countryCode}/${locale}`).then(
+				(res) => res.json()
 			),
 	});
 

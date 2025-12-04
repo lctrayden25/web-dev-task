@@ -1,3 +1,6 @@
+import { memo } from "react";
+import CustomImage from "./CustomImage";
+
 type WhyUsCardProps = {
 	id: string;
 	title: string;
@@ -12,7 +15,7 @@ const WhyUsCard = ({ title, description, icon, id }: WhyUsCardProps) => {
 			className="bg-white p-[20px] rounded-[8px] flex flex-col gap-[15px] border border-[#BFC8D0]"
 		>
 			<div className="flex flex-row md:flex-col gap-[10px] md:gap-[24px] items-center md:items-start">
-				<img
+				<CustomImage
 					src={icon}
 					alt={title}
 					className="w-full h-full max-w-[40px] max-h-[40px]"
@@ -24,4 +27,4 @@ const WhyUsCard = ({ title, description, icon, id }: WhyUsCardProps) => {
 	);
 };
 
-export default WhyUsCard;
+export default memo(WhyUsCard);

@@ -4,5 +4,11 @@
 	"readMore": "查看更多",
 	"explore": "探索",
 	"help": "幫助",
-	"signInSignUp": "登入 | 註冊"
+	"signInSignUp": "登入 | 註冊",
+	"checkDeviceCompatibility": "檢查設備兼容性",
+	"days": "天",
+	"isBestValue": "最佳價值",
+	"reviews": "評論",
+	"whereToNext": "下一步去哪里？",
+	"frequentlyAskedQuestions": "常見問題解答"
 }

@@ -1,12 +1,12 @@
 import { cn } from "@/utils/helper";
-import React, { useState } from "react";
+import { useState } from "react";
 
 type CustomTabProps = {
-	tabs: string[];
-	activeTab: string;
+	tabs: { name: string; id: string }[];
+	activeTab?: string;
 	setActiveTab: (tab: string) => void;
 	className?: string;
-	render: React.ReactNode[];
+	render: { content: string; id: string }[];
 };
 
 const CustomTab = ({
@@ -18,31 +18,34 @@ const CustomTab = ({
 }: CustomTabProps) => {
 	const [selectedTab, setSelectedTab] = useState(activeTab);
 
-	const activeIndex = tabs.findIndex((tab) => tab === selectedTab);
+	const activeIndex = tabs.findIndex((tab) => tab?.id === selectedTab);
 
-	const handleSelectTab = (tab: string) => {
-		setSelectedTab(tab);
-		setActiveTab(tab);
+	const handleSelectTab = (tab: { name: string; id: string }) => {
+		console.log({ tab });
+		setSelectedTab(tab?.id);
+		setActiveTab(tab.id);
 	};
+
+	console.log({ render, activeIndex });
 	return (
 		<div className="flex flex-col gap-[24px]">
 			<div className="flex gap-[24px] flex-wrap">
 				{tabs.map((tab) => (
 					<button
-						key={tab}
+						key={tab?.id}
 						onClick={() => handleSelectTab(tab)}
 						className={cn(
 							`${
-								selectedTab === tab ? "border-primary" : "border-gray-200"
+								selectedTab === tab?.id ? "border-primary" : "border-gray-200"
 							}  border rounded-[100px] px-[16px] py-[12px] cursor-pointer hover:opacity-60`,
 							className
 						)}
 					>
-						{tab}
+						{tab?.name}
 					</button>
 				))}
 			</div>
-			<div className="flex-1">{render?.[activeIndex] ?? null}</div>
+			<div className="flex-1">{render?.[activeIndex]?.content ?? null}</div>
 		</div>
 	);
 };

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import searchIcon from "@/assets/icon/search-icon.svg";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 type SearchInputProps = {
 	isMenuOpen: boolean;
 };
 
 const SearchInput = ({ isMenuOpen }: SearchInputProps) => {
+	const { t } = useTranslation();
 	const navigate = useNavigate();
 	const [searchText, setSearchText] = useState("");
 	const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +23,7 @@ const SearchInput = ({ isMenuOpen }: SearchInputProps) => {
 		<div className={`relative ${isMenuOpen ? "block" : "hidden md:block"}`}>
 			<input
 				type="text"
-				placeholder="Where to next?"
+				placeholder={t("whereToNext")}
 				value={searchText}
 				onChange={handleSearch}
 				className="px-[16px] py-[12px] border border-[#EBEBEB] rounded-[8px] w-full xl:w-[411px] max-h-[48px]"

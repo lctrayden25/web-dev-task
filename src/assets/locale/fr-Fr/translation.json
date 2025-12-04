@@ -4,5 +4,11 @@
 	"readMore": "En savoir plus",
 	"explore": "Explorer",
 	"help": "Aide",
-	"signInSignUp": "Se connecter | S'inscrire"
+	"signInSignUp": "Se connecter | S'inscrire",
+	"checkDeviceCompatibility": "Vérifier la compatibilité avec l'appareil",
+	"days": "Jours",
+	"isBestValue": "Meilleur Valeur",
+	"reviews": "Avis",
+	"whereToNext": "Où aller ensuite ?",
+	"frequentlyAskedQuestions": "Questions fréquemment posées"
 }
