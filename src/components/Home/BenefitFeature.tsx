@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import CustomImage from "../CustomImage";
 import Spinner from "../Spinner";
 import { toast } from "react-toastify";
+import ErrorDisplay from "../ErrorDisplay";
 const accordionBackgroundColor = [
 	"#EFFBFF",
 	"#DEF6FF",
@@ -44,7 +45,10 @@ const BenefitFeature = () => {
 	if (isLoading) return <Spinner />;
 	if (error) toast.error(error?.message || "Something went wrong");
 
-	if (!data) return "No data found";
+	if ((data as unknown as { message: string })?.message)
+		return (
+			<ErrorDisplay message={error?.message || "Oops! Something went wrong"} />
+		);
 
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">

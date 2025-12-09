@@ -9,6 +9,7 @@ import tableOur from "@/assets/icon/table-our.svg";
 import CustomImage from "../CustomImage";
 import tick from "@/assets/icon/tick.svg";
 import cross from "@/assets/icon/cross.svg";
+import ErrorDisplay from "../ErrorDisplay";
 
 const HowWeCompare = () => {
 	const { locale } = useParams<{ locale: Language }>();
@@ -16,7 +17,7 @@ const HowWeCompare = () => {
 		() => getCountryCode(locale as Language),
 		[locale]
 	);
-	const { data } = useSuspenseQuery({
+	const { data, error } = useSuspenseQuery({
 		queryKey: ["HowWeCompare", locale],
 		queryFn: async () => {
 			try {
@@ -35,7 +36,10 @@ const HowWeCompare = () => {
 		},
 	});
 
-	console.log({ data });
+	if ((data as unknown as { message: string })?.message)
+		return (
+			<ErrorDisplay message={error?.message || "Oops! Something went wrong"} />
+		);
 
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full flex flex-col items-center justify-between">

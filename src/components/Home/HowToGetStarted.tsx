@@ -22,7 +22,10 @@ const HowToGetStart = () => {
 	});
 
 	if (isLoading) return <Spinner />;
-	if (error) return <ErrorDisplay message={error.message} />;
+	if ((data as unknown as { message: string })?.message)
+		return (
+			<ErrorDisplay message={error?.message || "Oops! Something went wrong"} />
+		);
 
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">

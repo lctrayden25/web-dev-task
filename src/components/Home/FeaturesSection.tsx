@@ -1,11 +1,12 @@
 import { apiUrl, type FeaturesSectionType } from "@/utils/api";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import Spinner from "../Spinner";
 import type { Language } from "@/utils/constant";
 import { useParams } from "react-router-dom";
 import { useMemo } from "react";
 import { getCountryCode } from "@/utils/helper";
 import { toast } from "react-toastify";
+import ErrorDisplay from "../ErrorDisplay";
 
 const FeaturesSection = () => {
 	const { locale } = useParams<{ locale: Language }>();
@@ -13,7 +14,7 @@ const FeaturesSection = () => {
 		() => getCountryCode(locale as Language),
 		[locale]
 	);
-	const { data, isLoading, error } = useQuery<FeaturesSectionType>({
+	const { data, isLoading, error } = useSuspenseQuery<FeaturesSectionType>({
 		queryKey: ["FeaturesSection", locale],
 		queryFn: async () => {
 			try {
@@ -36,6 +37,10 @@ const FeaturesSection = () => {
 
 	if (isLoading) return <Spinner />;
 	if (error) toast.error(error?.message || "Something went wrong");
+	if ((data as unknown as { message: string })?.message)
+		return (
+			<ErrorDisplay message={error?.message || "Oops! Something went wrong"} />
+		);
 
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">

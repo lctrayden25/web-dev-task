@@ -12,7 +12,7 @@ import countries from "@/assets/icon/countries.svg";
 import moreCountries from "@/assets/icon/moreCountries.svg";
 
 import CustomTab from "../CustomTab";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { dummyProductData } from "@/utils/mock/productData";
 import { Language, ratingMap } from "@/utils/constant";
@@ -32,6 +32,7 @@ const ProductSection = () => {
 	const { t } = useTranslation();
 	const { locale } = useParams<{ locale: Language }>();
 	const productData = dummyProductData?.[0] ?? undefined;
+	const navigate = useNavigate();
 
 	const { name, rating, reviews, meta, thumbnails, packages, features } =
 		productData ?? {};
@@ -45,11 +46,11 @@ const ProductSection = () => {
 
 	return (
 		<div
-			className="relative lg:py-[70px]  lg:px-[80px] w-full bg-cover bg-center flex flex-col md:flex-row md:gap-[50px]"
+			className="relative lg:py-[70px] px-0 md:px-[40px] lg:px-[80px] w-full bg-cover bg-center flex flex-col md:flex-row md:gap-[50px]"
 			style={{ backgroundImage: `url(${productSectionBg})` }}
 		>
 			{/* show on desktop */}
-			<div className="hidden md:block max-w-auto md:max-w-[364px] xl:max-w-[464px] w-full">
+			<div className="hidden md:block py-[35px] max-w-auto md:max-w-[364px] xl:max-w-[464px] w-full">
 				<CustomThumbCarousel slides={thumbnails ?? []} />
 			</div>
 
@@ -64,8 +65,8 @@ const ProductSection = () => {
 					United States of America
 				</h3>
 				<button
-					onClick={() => console.log("details")}
-					className="bg-white text-[16px] py-[8px] px-[11px] rounded-[21px] w-[108px] shadow-md font-bold mb-[16px]"
+					onClick={() => navigate("/product/1")}
+					className="bg-white text-[16px] py-[8px] px-[11px] rounded-[21px] w-[108px] shadow-md font-bold mb-[16px] cursor-pointer hover:opacity-60 transition-opacity duration-300"
 				>
 					Details
 				</button>
@@ -89,7 +90,7 @@ const ProductSection = () => {
 			</div>
 
 			<div className="flex flex-col gap-[24px] px-[20px]">
-				<h2 className="hidden md:block font-bold text-[24px] md:text-[28px] xl:text-[36px] w-full">
+				<h2 className="hidden md:block  py-[35px] font-bold text-[24px] md:text-[28px] xl:text-[36px] w-full">
 					{name?.[locale as Language]}
 				</h2>
 				<div className="hidden md:flex gap-[20px] flex-wrap">
@@ -182,7 +183,10 @@ const ProductSection = () => {
 						</p>
 					</div>
 					<div className="grid grid-cols-2 gap-[24px] my-4">
-						<div className="flex flex-col gap-[10px] p-[10px] bg-white rounded-[6px] border border-[#D9D9D9]">
+						<div
+							className="flex flex-col gap-[10px] p-[10px] bg-white rounded-[6px] border border-[#D9D9D9] hover:shadow-md transition-all duration-300 cursor-pointer"
+							onClick={() => navigate("/product/1")}
+						>
 							<CustomImage src={frameIcon} alt="mobile country flag" />
 							<span className="text-[16px] justify-between font-normal">
 								Europe
@@ -198,7 +202,10 @@ const ProductSection = () => {
 							</div>
 						</div>
 
-						<div className="flex flex-col gap-[10px] p-[10px] bg-white rounded-[6px] border border-[#D9D9D9]">
+						<div
+							className="flex flex-col gap-[10px] p-[10px] bg-white rounded-[6px] border border-[#D9D9D9] hover:shadow-md transition-all duration-300 cursor-pointer"
+							onClick={() => navigate("/product/2")}
+						>
 							<CustomImage src={frameIcon} alt="mobile country flag" />
 							<span className="text-[16px] font-normal">Europe</span>
 							<div className="flex justify-between p-[8px] border border-[#D9D9D9] rounded-[6px]">
@@ -213,7 +220,7 @@ const ProductSection = () => {
 						</div>
 					</div>
 					<CustomButton
-						onClick={() => console.log("view all")}
+						onClick={() => navigate("/explore")}
 						className="max-w-[150px]"
 					>
 						{t("readMore")}
