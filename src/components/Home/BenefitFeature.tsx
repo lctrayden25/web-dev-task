@@ -40,9 +40,12 @@ const BenefitFeature = () => {
 			}
 		},
 	});
+	console.log({ data });
 
 	if (isLoading) return <Spinner />;
 	if (error) toast.error(error?.message || "Something went wrong");
+
+	if (!data) return "No data found";
 
 	return (
 		<div className="relative py-[35px] lg:py-[70px] px-[20px] lg:px-[80px] w-full">

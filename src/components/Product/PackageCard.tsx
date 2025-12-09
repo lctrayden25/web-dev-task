@@ -51,7 +51,7 @@ const PackageCard = ({
 			</div>
 			<div className="font-bold">{getPrice(price)}</div>
 			{isBestValue && (
-				<div className="absolute top-[-10px] right-[5px]">
+				<div className="absolute top-[-10px] right-[25px] md:right-[5px]">
 					<span className="text-white bg-linear-to-r from-[#02D6CC] to-[#0042C4] px-2 py-1 rounded-full text-[15px] font-bold">
 						{t("isBestValue")}
 					</span>
