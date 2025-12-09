@@ -33,14 +33,13 @@ const BenefitFeature = () => {
 				const response = await fetch(
 					`${apiUrl}/content/BenefitsSection/${countryCode}/${locale}`
 				).then((res) => res.json());
-				console.log({ response });
+
 				return response;
 			} catch (error) {
 				console.log(error);
 			}
 		},
 	});
-	console.log({ data });
 
 	if (isLoading) return <Spinner />;
 	if (error) toast.error(error?.message || "Something went wrong");

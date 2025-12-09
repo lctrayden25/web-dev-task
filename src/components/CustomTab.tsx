@@ -26,7 +26,6 @@ const CustomTab = ({
 		setActiveTab(tab.id);
 	};
 
-	console.log({ render, activeIndex });
 	return (
 		<div className="flex flex-col gap-[24px]">
 			<div className="flex gap-[24px] flex-wrap">

@@ -42,7 +42,6 @@ const ProductSection = () => {
 	const tabContents = meta?.map((item) => {
 		return { content: item?.content?.[locale as Language], id: item?.id };
 	});
-	console.log({ tabNames, tabContents });
 
 	return (
 		<div
