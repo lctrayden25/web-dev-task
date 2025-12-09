@@ -1,4 +1,4 @@
-import avatar from "@/assets/icon/avatar.svg";
+import avatar from "@/assets/icon/Avatar.svg";
 
 type TravelerSayCardProps = {
 	avatar: string;
