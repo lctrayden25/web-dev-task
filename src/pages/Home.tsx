@@ -4,10 +4,10 @@ import FeaturesSection from "@/components/Home/FeaturesSection";
 import GetPackage from "@/components/Home/GetPackage";
 import GetTheAppSection from "@/components/Home/GetTheAppSection";
 import HowToGetStarted from "@/components/Home/HowToGetStarted";
-// import HowWeCompare from "@/components/Home/HowWeCompare";
+import HowWeCompare from "@/components/Home/HowWeCompare";
 import ProductSection from "@/components/Home/ProductSection";
 import ResourceSection from "@/components/Home/ResourceSection";
-// import TravelerSaySection from "@/components/Home/TravelerSaySection";
+import TravelerSaySection from "@/components/Home/TravelerSaySection";
 import WhyUsSection from "@/components/Home/WhyUsSection";
 import YouMayLike from "@/components/Home/YouMayLike";
 import Layout from "@/components/Layout";
@@ -19,12 +19,12 @@ const Home = () => {
 			<BenefitFeature />
 			<FeaturesSection />
 			<GetPackage />
-			{/* <HowWeCompare /> */}
+			<HowWeCompare />
 			<WhyUsSection />
 			<HowToGetStarted />
 			<YouMayLike />
 			<FaqSection />
-			{/* <TravelerSaySection /> */}
+			<TravelerSaySection />
 			<ResourceSection />
 			<GetTheAppSection />
 		</Layout>

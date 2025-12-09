@@ -18,7 +18,7 @@ const ResourceSection = () => {
 					{(data?.items ?? [])?.map((item) => (
 						<div
 							key={item.id}
-							className="bg-[#F8FAFD] p-[20px] rounded-[10px] flex flex-col gap-[15px]"
+							className="bg-[#F8FAFD] p-[20px] rounded-[10px] flex flex-col gap-[15px] hover:shadow-md transition-all duration-300"
 						>
 							<h3 className="text-lg font-bold">
 								{item.title?.[locale as Language]}

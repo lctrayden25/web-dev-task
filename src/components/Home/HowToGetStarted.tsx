@@ -35,7 +35,7 @@ const HowToGetStart = () => {
 					{data?.steps?.map((step) => (
 						<div
 							key={step.title}
-							className="bg-[#F8FAFD] p-[20px] rounded-[10px] flex flex-col gap-[15px]"
+							className="bg-[#F8FAFD] p-[20px] rounded-[10px] flex flex-col gap-[15px] hover:shadow-md transition-all duration-300"
 						>
 							<h3 className="text-lg font-bold">{step.title}</h3>
 							<img src={step.image} alt={step.title} />

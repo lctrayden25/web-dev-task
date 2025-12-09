@@ -12,7 +12,7 @@ const WhyUsCard = ({ title, description, icon, id }: WhyUsCardProps) => {
 	return (
 		<div
 			key={id}
-			className="bg-white p-[20px] rounded-[8px] flex flex-col gap-[15px] border border-[#BFC8D0]"
+			className="bg-white p-[20px] rounded-[8px] flex flex-col gap-[15px] border border-[#BFC8D0] hover:shadow-md transition-all duration-300"
 		>
 			<div className="flex flex-row md:flex-col gap-[10px] md:gap-[24px] items-center md:items-start">
 				<CustomImage
